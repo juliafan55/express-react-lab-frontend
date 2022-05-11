@@ -13,18 +13,15 @@ import Projects from './pages/Projects';
 
 function App() {
 
-  const URL = "http://localhost:4000/";
+  const URL = "https://lab-express-react.herokuapp.com/";
   
   return (
     <div className="App">
       <Header />
       <Routes>
-        <Route exact path="/" >
-          <Projects URL={URL} />
-        </Route>
-        <Route path="/about">
-          <About URL={URL} />
-        </Route>
+        <Route exact path="/" element={<Home />} />
+        <Route path="/projects" element={<Projects URL={URL}/>} />
+        <Route path="/about" element={<About URL={URL} />} />
       </Routes>
     </div>
   );
